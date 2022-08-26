@@ -9,9 +9,9 @@ import (
 )
 
 func GetAllCities(c *fiber.Ctx) error {
-	var citites []models.City
-	db.Db.Find(&citites)
-	return c.JSON(citites)
+	var cities []models.City
+	db.Db.Find(&cities)
+	return c.JSON(cities)
 }
 
 func GetCity(c *fiber.Ctx) error {

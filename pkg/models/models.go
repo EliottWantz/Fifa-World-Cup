@@ -38,7 +38,7 @@ type Event struct {
 	StartAt  time.Time `gorm:"not null" json:"startAt"`
 }
 
-type Groups struct {
+type Group struct {
 	ID      uint   `gorm:"primarykey" json:"id"`
 	EventID uint   `gorm:"not null" json:"eventId"`
 	Title   string `gorm:"not null" json:"title"`
@@ -81,13 +81,13 @@ type Team struct {
 	CountryID uint   `gorm:"not null" json:"countryId"`
 }
 
-type GroupsTeams struct {
+type GroupTeam struct {
 	ID      uint `gorm:"primarykey" json:"id"`
 	GroupID uint `gorm:"not null" json:"groupId"`
 	TeamID  uint `gorm:"not null" json:"teamId"`
 }
 
-type EventsTeams struct {
+type EventTeam struct {
 	ID      uint `gorm:"primarykey" json:"id"`
 	EventID uint `gorm:"not null" json:"eventId"`
 	TeamID  uint `gorm:"not null" json:"teamId"`
