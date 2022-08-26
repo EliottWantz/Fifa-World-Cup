@@ -26,7 +26,8 @@ func main() {
 
 	// Create fiber app
 	app := fiber.New(fiber.Config{
-		Prefork: *prod, // go run app.go -prod
+		Prefork:               *prod, // go run app.go -prod
+		DisableStartupMessage: true,
 	})
 
 	// Middleware
@@ -43,5 +44,6 @@ func main() {
 	app.Static("/", "../client/dist")
 
 	// Listen on port 8080
-	log.Fatal(app.Listen(*port)) // go run app.go -port=:8080
+	log.Println("Listening on port", *port)
+	log.Fatal(app.Listen(*port))
 }
