@@ -6,14 +6,14 @@ import (
 )
 
 type Continent struct {
-	ID        uint      `gorm:"primarykey"`
-	Name      string    `gorm:"not null"`
-	Slug      string    `gorm:"not null"`
-	Key       string    `gorm:"not null"`
-	PlaceID   int       `gorm:"not null"`
-	AltNames  string    `gorm:"not null"`
-	CreatedAt time.Time `gorm:"not null"`
-	UpdatedAt time.Time `gorm:"not null"`
+	ID        uint      `gorm:"primarykey" json:"id"`
+	Name      string    `gorm:"not null" json:"name"`
+	Slug      string    `gorm:"not null" json:"slug"`
+	Key       string    `gorm:"not null" json:"key"`
+	PlaceID   int       `gorm:"not null" json:"placeId"`
+	AltNames  string    `gorm:"not null" json:"altNames"`
+	CreatedAt time.Time `gorm:"not null" json:"createdAt"`
+	UpdatedAt time.Time `gorm:"not null" json:"updatedAt"`
 }
 
 func (c *Continent) Print() {
