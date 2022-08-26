@@ -11,6 +11,7 @@ func SetupAPI(api fiber.Router) {
 	registerCountries(api)
 	registerCities(api)
 	registerGroups(api)
+	registerRounds(api)
 }
 
 func registerContinents(api fiber.Router) {
@@ -39,4 +40,11 @@ func registerGroups(api fiber.Router) {
 
 	groups.Get("/", handlers.GetAllGroups)
 	groups.Get("/:id", handlers.GetGroup)
+}
+
+func registerRounds(api fiber.Router) {
+	rounds := api.Group("/rounds")
+
+	rounds.Get("/", handlers.GetAllRounds)
+	rounds.Get("/:id", handlers.GetRound)
 }
