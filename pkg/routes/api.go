@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"app/handlers"
+	"app/pkg/handlers"
 
 	"github.com/gofiber/fiber/v2"
 )

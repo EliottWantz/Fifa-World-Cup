@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"app/db"
-	"app/models"
+	"app/pkg/db"
+	"app/pkg/models"
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"

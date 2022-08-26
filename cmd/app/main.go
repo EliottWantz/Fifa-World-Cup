@@ -1,7 +1,7 @@
 package main
 
 import (
-	"app/db"
+	"app/pkg/db"
 	"flag"
 	"log"
 
@@ -9,7 +9,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
 
-	"app/routes"
+	"app/pkg/routes"
 )
 
 var (

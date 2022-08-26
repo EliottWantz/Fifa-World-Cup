@@ -14,7 +14,7 @@ var (
 
 func Connect() {
 	var err error
-	Db, err = gorm.Open(sqlite.Open("./db/worldcup.db"), &gorm.Config{})
+	Db, err = gorm.Open(sqlite.Open("./pkg/db/worldcup.db"), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
 	}
