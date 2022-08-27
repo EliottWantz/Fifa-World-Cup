@@ -8,7 +8,6 @@ import (
 )
 
 func GetAllTeams(c *fiber.Ctx) error {
-	// TODO: get teams in a given group with group_id as a query string
 	var teams []models.Team
 	if group_id := c.Query("group_id"); group_id != "" {
 		db.Db.Table("groups").Joins("JOIN groups_teams AS gt ON gt.group_id = groups.id").Joins("JOIN teams ON teams.id = gt.team_id").Where("groups.event_id = 21 AND groups.id = ?", group_id).Select("teams.*").Find(&teams)
