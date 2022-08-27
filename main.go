@@ -32,7 +32,9 @@ func main() {
 
 	// Middleware
 	app.Use(recover.New())
-	app.Use(logger.New())
+	app.Use(logger.New(logger.Config{
+		Format: "[${time}] ${status} - ${latency} ${method} ${path} ${queryParams}\n",
+	}))
 
 	// Create a /api/v1 endpoint
 	v1 := app.Group("/api/v1")
