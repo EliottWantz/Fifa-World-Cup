@@ -13,6 +13,7 @@ func SetupAPI(api fiber.Router) {
 	registerGroups(api)
 	registerRounds(api)
 	registerTeams(api)
+	registerGoals(api)
 }
 
 func registerContinents(api fiber.Router) {
@@ -55,4 +56,11 @@ func registerTeams(api fiber.Router) {
 
 	teams.Get("/", handlers.GetAllTeams)
 	teams.Get("/:id", handlers.GetTeam)
+}
+
+func registerGoals(api fiber.Router) {
+	goals := api.Group("/goals")
+
+	goals.Get("/", handlers.GetAllGoals)
+	goals.Get("/:id", handlers.GetGoal)
 }
